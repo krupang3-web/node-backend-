@@ -621,6 +621,7 @@ app.get('/api/patients/:id/analyses', authMiddleware, async (req, res) => {
 });
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+app.get('/api', (req, res) => res.json({ status: 'NeuroCry API is running on Vercel' }));
 app.get(/^\/(?!api).*/, (req, res) => {
   const p = path.basename(req.path) || 'index.html';
   const f = path.join(FRONTEND, p.includes('.html') ? p : 'index.html');
